@@ -6,11 +6,27 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 
 
+import {
+  FIREBASE_PROVIDERS,
+defaultFirebase,
+firebaseAuthConfig,
+FirebaseRef,
+AngularFire,
+AuthProviders,
+AuthMethods
+
+} from 'angularfire2';
+
+
+
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = TabsPage;
+  message:string;
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

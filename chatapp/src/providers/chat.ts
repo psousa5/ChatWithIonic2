@@ -26,18 +26,21 @@ export class ChatProvider {
   }
 
   //addchats
-  addChats(uid, content){
+  addChats(uid, data){
     //first user
-    let otherUid = content;
-    let endpoint =this.af.database.object(`/users/${uid}/chats/${content}`);
+    let otherUid = data;
+    let endpoint =this.af.database.object(`/users/${uid}/chats/${data}`);
     endpoint.set(true);
 
     //second user
-    let endpoint2 =this.af.database.object(`/users/${content}/chats/${uid}`);
+    let endpoint2 =this.af.database.object(`/users/${data}/chats/${uid}`);
     endpoint2.set(true);
   }
 
   //getchatref
+  getChatRef(uid, data){
+
+  }
 
 
 

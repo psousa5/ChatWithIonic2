@@ -26,11 +26,21 @@ export class AccountPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public auth:AuthProvider, public userProvider:UserProvider
   ) {
-    this.userProvider.
+    this.userProvider.getUser()
+      .then(userObservable => {
+        userObservable.subscribe(user => {
+          this.user = user;
+        });
+      });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');
+  }
+
+
+  updatePicture(){
+    this.userProvider.updatePicture();
   }
 
 

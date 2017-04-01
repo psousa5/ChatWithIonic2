@@ -26,7 +26,8 @@ export class LoginPage {
   storage = new Storage(LocalStorage);
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public form:FormBuilder,
-public auth:AuthProvider, public userProvider:UsersProvider,public util:UtilProvider
+  public userProvider:UsersProvider,
+public auth:AuthProvider, public util:UtilProvider
 
   ) {
     console.log(`Going to login page`);

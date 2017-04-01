@@ -8,9 +8,16 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {FIREBASE_PROVIDERS,defaultFirebase,firebaseAuthConfig,AuthProviders,AuthMethods} from 'angularfire2';
+import {FIREBASE_PROVIDERS,defaultFirebase,firebaseAuthConfig,AuthProviders,AuthMethods,AngularFireModule} from 'angularfire2';
 import {bootstrap} from 'bootstrap';
-
+// AF2 Settings
+export const firebaseConfig = {
+  apiKey: "AIzaSyArwzy5ZW9iQp0548kMDZNWbV1U_sKiy00",
+     authDomain: "chatwithionic2.firebaseapp.com",
+     databaseURL: "https://chatwithionic2.firebaseio.com",
+     storageBucket: "chatwithionic2.appspot.com",
+     messagingSenderId: "752856510663"
+};
 
 
 @NgModule({
@@ -22,7 +29,8 @@ import {bootstrap} from 'bootstrap';
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp,[FIREBASE_PROVIDERS, defaultFirebase({
     apiKey: "AIzaSyArwzy5ZW9iQp0548kMDZNWbV1U_sKiy00",

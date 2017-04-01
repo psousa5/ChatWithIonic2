@@ -1,7 +1,7 @@
 import { Injectable ,Inject} from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {FirebaseAuth, FirebaseRef, AngularFire} from ' angularfire2';
+import { FirebaseRef, AngularFire} from 'angularfire2';
 import{LocalStorage, Storage} from ' ionic-angular';
 import {Camera} from 'ionic-native';
 
@@ -15,7 +15,7 @@ import {Camera} from 'ionic-native';
 export class UserProvider {
   local = new Storage(LocalStorage);
 
-  constructor(public http: Http, public af:AngularFire) {
+  constructor(public http: Http, public af: AngularFire) {
     console.log('Hello User Provider');
   }
   //get current user uid
